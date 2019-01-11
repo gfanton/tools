@@ -42,8 +42,8 @@ func Hover(ctx context.Context, f File, pos token.Pos) (string, Range, error) {
 	}
 	// TODO(rstambler): Add documentation and improve quality of object string.
 	content := types.ObjectString(obj, qualifier(fAST, pkg.Types, pkg.TypesInfo))
-	markdown := "```go\n" + content + "\n```"
-	return markdown, Range{
+	// markdown := "```go\n" + content + "\n```"
+	return content, Range{
 		Start: i.ident.Pos(),
 		End:   i.ident.End(),
 	}, nil
